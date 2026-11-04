@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Avaliação de Perfil do Estudante</title>
+  <meta name="description" content="Avaliação de perfil e preferências dos estudantes.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="assets/img/icone.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/fontes.css">
+  <link rel="stylesheet" href="assets/css/estilo.css">
+</head>
+<body data-etapa="1" data-nivel="0">
+  <div class="barra-progresso" aria-hidden="true"><span id="progresso"></span></div>
+
+  <header class="topo">
+    <div class="topo-interno">
+      <a class="marca" href="index.html">
+        <svg class="logo" viewBox="0 0 40 40" aria-hidden="true">
+          <rect class="logo-fundo" width="40" height="40" rx="11"/>
+          <path class="logo-lente" d="M7 20c3.6-5.6 8-8.4 13-8.4S29.4 14.4 33 20c-3.6 5.6-8 8.4-13 8.4S10.6 25.6 7 20z"/>
+          <circle id="logo-pupila" class="logo-pupila" cx="20" cy="20" r="4.6"/>
+        </svg>
+        <span class="marca-texto">
+          <strong data-config="instituicao">Programa Perfil Estudantil</strong>
+          <span>Núcleo de Orientação Educacional</span>
+        </span>
+      </a>
+      <span class="selo">Avaliação <span data-config="ano">2026</span></span>
+    </div>
+  </header>
+
+  <main class="conteudo">
+    <section class="intro cartao">
+      <p class="sobretitulo">Etapa <span id="etapa-atual">1</span> de <span id="etapa-total">2</span></p>
+      <h1 data-config="titulo">Avaliação de Perfil do Estudante</h1>
+      <p class="intro-texto">Esta avaliação ajuda a coordenação a conhecer melhor o perfil, as preferências e a rotina dos estudantes. Não existem respostas certas ou erradas.</p>
+      <ul class="meta">
+        <li>
+          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 4.5V8l2.25 1.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Tempo estimado: <span data-config="tempoEstimado">8 minutos</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 5.5L8 2.5l5.5 3L8 8.5z M2.5 10.5L8 13.5l5.5-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          2 etapas
+        </li>
+        <li>
+          <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5.5 7V5a2.5 2.5 0 015 0v2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          Respostas confidenciais
+        </li>
+      </ul>
+      <ol class="etapas">
+        <li class="ativa"><span class="etapa-num">1</span><span>Identificação e perfil</span></li>
+        <li><span class="etapa-num">2</span><span>Rotina e bem-estar</span></li>
+      </ol>
+    </section>
+
+    <form id="formulario" novalidate>
+      <div id="perguntas" class="lista-secoes"></div>
+
+      <section class="cartao acoes">
+        <label class="declaracao">
+          <input type="checkbox" id="declaracao">
+          <span>Declaro que as informações fornecidas são verdadeiras.</span>
+        </label>
+        <p class="pergunta-erro sem-recuo" id="erro-declaracao" role="alert" hidden>Confirme a declaração para continuar.</p>
+        <div class="acoes-linha">
+          <span class="salvo" id="salvo">Suas respostas são salvas automaticamente.</span>
+          <button type="submit" class="botao principal" id="botao-continuar">
+            <span class="rotulo">Continuar</span>
+            <svg class="seta" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </section>
+    </form>
+  </main>
+
+  <footer class="rodape">
+    <p class="ao-vivo"><span class="ponto" aria-hidden="true"></span><span id="contador">24 estudantes respondendo agora</span></p>
+    <p id="rodape-texto">Suas respostas são confidenciais e usadas apenas para fins pedagógicos.</p>
+    <p class="rodape-pequeno">© <span data-config="ano">2026</span> <span data-config="instituicao">Programa Perfil Estudantil</span> · Núcleo de Orientação Educacional</p>
+  </footer>
+
+  <canvas id="ruido" class="ruido" aria-hidden="true"></canvas>
+
+  <script src="assets/js/perguntas.js"></script>
+  <script src="assets/js/som.js"></script>
+  <script src="assets/js/formulario.js"></script>
+  <script src="assets/js/inicio.js"></script>
+  <script src="assets/js/anomalias.js"></script>
+</body>
+</html>

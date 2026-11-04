@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Avaliação de Perfil do Estudante</title>
+  <meta name="theme-color" content="#000000">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/img/icone.svg" type="image/svg+xml" id="favicon">
+  <link rel="stylesheet" href="assets/css/fontes.css">
+  <link rel="stylesheet" href="assets/css/falha.css">
+</head>
+<body class="terror">
+  <canvas id="estatica" class="estatica" aria-hidden="true"></canvas>
+
+  <div class="hud" id="hud" aria-hidden="true">
+    <span class="hud-rec"><i></i>REC</span>
+    <span class="hud-cam">CAM 02</span>
+    <span class="hud-tempo" id="hud-tempo">00:00:00</span>
+    <span class="hud-data" id="hud-data"></span>
+  </div>
+
+  <main class="palco">
+    <!-- 1. Terminal (desligado por padrão: mostrarTextoDoTerminal) -->
+    <section class="tela terminal" id="terminal" aria-live="polite" hidden></section>
+
+    <!-- 2. Etapa 3 -->
+    <section class="tela tela-etapa3" id="tela-etapa3" hidden>
+      <form id="form-etapa3" novalidate>
+        <header class="etapa3-cab">
+          <p class="etapa3-sobre">Etapa 3 de 3</p>
+        </header>
+        <div id="perguntas-etapa3"></div>
+        <button class="botao-terror largo" id="botao-entregar" type="submit">Entregar</button>
+      </form>
+    </section>
+
+    <!-- 3. Fim: "Você já tentou sair dessa sala?" e depois só o link -->
+    <section class="tela tela-fim" id="tela-fim" hidden>
+      <p class="fim-texto" id="fim-texto"></p>
+      <a class="fim-link" id="fim-link" href="#" target="_blank" rel="noopener noreferrer" hidden></a>
+    </section>
+
+    <!-- 4. Revelação (pode ser desligada em perguntas.js) -->
+    <section class="tela revelacao" id="revelacao" hidden>
+      <div class="revelacao-caixa">
+        <p class="revelacao-sobre">Fim</p>
+        <h2>Isto foi um projeto escolar.</h2>
+        <p>Nenhuma das suas respostas foi enviada para lugar nenhum. Elas ficaram apenas neste aparelho e acabaram de ser apagadas.</p>
+        <p id="revelacao-reflexao">Mas pense: em poucos minutos, você contou a um site que nunca tinha visto quantas pessoas moram com você, em que horários fica sozinho(a) em casa e a que horas dorme.</p>
+        <p>Na internet, desconfie de formulários que pedem detalhes da sua rotina.</p>
+        <a class="botao-terror claro" href="index.html">Voltar ao início</a>
+      </div>
+    </section>
+  </main>
+
+  <div class="crt" aria-hidden="true"><span class="crt-barra"></span></div>
+  <div class="flash" id="flash" aria-hidden="true"></div>
+  <p class="aviso" id="aviso" role="status" hidden></p>
+  <p class="dica-pular" id="dica-pular" aria-hidden="true">clique para avançar</p>
+  <button class="botao-som" id="botao-som" type="button" aria-pressed="false" hidden>som: ligado</button>
+
+  <script src="assets/js/perguntas.js"></script>
+  <script src="assets/js/som.js"></script>
+  <script src="assets/js/formulario.js"></script>
+  <script src="assets/js/falha.js"></script>
+</body>
+</html>
