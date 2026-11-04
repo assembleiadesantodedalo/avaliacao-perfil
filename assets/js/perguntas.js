@@ -31,7 +31,7 @@ window.PERFIL = {
 
     // MODO DE TESTE: true permite avançar sem preencher nada (nenhuma
     // pergunta fica obrigatória). Troque para false antes da apresentação.
-    modoTeste: true,
+    modoTeste: false,
 
     // Segundos de glitch depois de clicar em "Enviar respostas", antes da
     // página de terror.
